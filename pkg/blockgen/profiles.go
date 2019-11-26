@@ -53,6 +53,19 @@ var (
 			2 * time.Hour,
 		}, 1*time.Hour, 100, 50),
 
+		"realistic-k8s-1w-medium": realisticK8s([]time.Duration{
+			// One week, from newest to oldest, in the same way Thanos compactor would do.
+			2 * time.Hour,
+			2 * time.Hour,
+			2 * time.Hour,
+			8 * time.Hour,
+			8 * time.Hour,
+			48 * time.Hour,
+			48 * time.Hour,
+			48 * time.Hour,
+			2 * time.Hour,
+		}, 1*time.Hour, 200, 50),
+
 		"continuous-1w-small": continuous([]time.Duration{
 			// One week, from newest to oldest, in the same way Thanos compactor would do.
 			2 * time.Hour,
